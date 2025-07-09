@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beth Harrison - City Photography</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Beth Harrison</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#gallery">Gallery</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#awards">Awards</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Urban Stories Through Light</h1>
+            <p>Capturing the soul of cities through contemporary photography</p>
+            <a href="#gallery" class="cta-button">View Gallery</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800&h=600&fit=crop"
+                alt="Urban architecture and city streets">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Featured Work</h2>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="street">Street</button>
+                <button class="filter-btn" data-filter="skyline">Skyline</button>
+                <button class="filter-btn" data-filter="night">Night</button>
+                <button class="filter-btn" data-filter="portraits">Urban Portraits</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="architecture">
+                    <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=600&h=400&fit=crop"
+                        alt="Modern architecture">
+                    <div class="gallery-overlay">
+                        <h3>Modern Lines</h3>
+                        <p>Architecture Series</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="street">
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=800&fit=crop"
+                        alt="City street at night">
+                    <div class="gallery-overlay">
+                        <h3>Neon Dreams</h3>
+                        <p>Street Photography</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="skyline">
+                    <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=600&h=400&fit=crop"
+                        alt="City skyline">
+                    <div class="gallery-overlay">
+                        <h3>Skyline Silhouettes</h3>
+                        <p>Urban Landscapes</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="architecture">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=600&fit=crop"
+                        alt="Building facade">
+                    <div class="gallery-overlay">
+                        <h3>Geometric Patterns</h3>
+                        <p>Architectural Details</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="street">
+                    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&h=400&fit=crop"
+                        alt="Busy city intersection">
+                    <div class="gallery-overlay">
+                        <h3>Urban Flow</h3>
+                        <p>City Life</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="skyline">
+                    <img src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?w=600&h=800&fit=crop"
+                        alt="City reflection">
+                    <div class="gallery-overlay">
+                        <h3>Reflections</h3>
+                        <p>Urban Abstracts</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="night">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&h=800&fit=crop"
+                        alt="Night city lights">
+                    <div class="gallery-overlay">
+                        <h3>Neon Nights</h3>
+                        <p>Night Photography</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portraits">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=400&fit=crop"
+                        alt="Urban portrait">
+                    <div class="gallery-overlay">
+                        <h3>City Souls</h3>
+                        <p>Urban Portraits</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="architecture">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=600&fit=crop"
+                        alt="Modern building">
+                    <div class="gallery-overlay">
+                        <h3>Glass & Steel</h3>
+                        <p>Contemporary Architecture</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="night">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=600&h=400&fit=crop"
+                        alt="Night street">
+                    <div class="gallery-overlay">
+                        <h3>After Dark</h3>
+                        <p>Night Streets</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="street">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=800&fit=crop"
+                        alt="Busy street">
+                    <div class="gallery-overlay">
+                        <h3>Urban Rhythm</h3>
+                        <p>Street Life</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="portraits">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop"
+                        alt="City portrait">
+                    <div class="gallery-overlay">
+                        <h3>Metropolitan</h3>
+                        <p>Urban Life</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="architecture">
+                    <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=600&h=400&fit=crop"
+                        alt="Building details">
+                    <div class="gallery-overlay">
+                        <h3>Urban Forms</h3>
+                        <p>Architectural Study</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Beth</h2>
+                    <p>With over a decade of experience in urban photography, I specialize in capturing the essence of
+                        city life through a contemporary lens. My work explores the intersection of architecture, light,
+                        and human experience in urban environments.</p>
+                    <p>Based in New York City, I've had the privilege of documenting metropolitan landscapes across
+                        North America and Europe. Each photograph tells a story of urban evolution, architectural
+                        innovation, and the dynamic relationship between people and their built environment.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>25+</h3>
+                            <p>Cities Documented</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop"
+                        alt="Beth Harrison portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Services & Pricing</h2>
+            <p>Professional photography services for commercial and artistic projects</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📸</div>
+                    <h3>Commercial Photography</h3>
+                    <p>Professional shoots for businesses, real estate, and architectural projects</p>
+                    <div class="service-price">Starting at $800</div>
+                    <ul class="service-features">
+                        <li>4-hour session</li>
+                        <li>50+ edited photos</li>
+                        <li>Commercial license</li>
+                        <li>Same-day preview</li>
+                    </ul>
+                </div>
+                <div class="service-card featured">
+                    <div class="service-icon">🌃</div>
+                    <h3>Urban Collection</h3>
+                    <p>Comprehensive city documentation and architectural photography</p>
+                    <div class="service-price">Starting at $1,200</div>
+                    <ul class="service-features">
+                        <li>8-hour session</li>
+                        <li>100+ edited photos</li>
+                        <li>Multiple locations</li>
+                        <li>Print-ready files</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Fine Art Prints</h3>
+                    <p>Limited edition prints and custom framing options</p>
+                    <div class="service-price">From $150</div>
+                    <ul class="service-features">
+                        <li>Museum-quality prints</li>
+                        <li>Various sizes available</li>
+                        <li>Custom framing</li>
+                        <li>Certificates of authenticity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Beth's ability to capture the essence of urban architecture is extraordinary. Her
+                            photographs brought our development project to life in ways we never imagined."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
+                            alt="Client">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Senior Architect, Urban Design Co.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Working with Beth was a game-changer for our marketing campaign. Her city photography
+                            perfectly captured the vibe we wanted to convey."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
+                            alt="Client">
+                        <div class="author-info">
+                            <h4>Sarah Martinez</h4>
+                            <p>Marketing Director, Metro Properties</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Beth's night photography series transformed our gallery exhibition. Her unique perspective
+                            on urban landscapes is truly remarkable."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
+                            alt="Client">
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <p>Gallery Curator, Modern Art Space</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition Section -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2>Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-year">2023</div>
+                    <div class="award-content">
+                        <h3>International Photography Awards</h3>
+                        <p>Gold Medal - Architecture Category</p>
+                        <span class="award-series">"Metropolitan Reflections" Series</span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-year">2022</div>
+                    <div class="award-content">
+                        <h3>Sony World Photography Awards</h3>
+                        <p>Finalist - Professional Architecture</p>
+                        <span class="award-series">"Urban Geometries" Collection</span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-year">2021</div>
+                    <div class="award-content">
+                        <h3>National Geographic</h3>
+                        <p>Featured Photographer</p>
+                        <span class="award-series">"Cities After Dark" Editorial</span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-year">2020</div>
+                    <div class="award-content">
+                        <h3>Architecture Photography Prize</h3>
+                        <p>Winner - Urban Landscapes</p>
+                        <span class="award-series">"Concrete Dreams" Project</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Photography Journal</h2>
+            <p>Tips, insights, and behind-the-scenes stories from the urban photography world</p>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&h=250&fit=crop"
+                            alt="Blog post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">December 15, 2023</span>
+                            <span class="blog-category">Tips</span>
+                        </div>
+                        <h3>Mastering Night Photography in Urban Settings</h3>
+                        <p class="blog-excerpt">Essential techniques for capturing stunning city lights and creating
+                            dramatic urban nightscapes...</p>
+                        <div class="blog-full-content" style="display: none;">
+                            <p>Night photography in urban environments presents unique challenges and incredible
+                                opportunities. The interplay between artificial lights and architectural forms creates a
+                                canvas unlike any other time of day.</p>
+
+                            <h4>Essential Equipment</h4>
+                            <p>A sturdy tripod is absolutely crucial for night photography. I recommend using a camera
+                                with good high-ISO performance and fast lenses (f/1.4 to f/2.8) to capture as much
+                                available light as possible. Don't forget extra batteries - cold weather drains them
+                                quickly!</p>
+
+                            <h4>Camera Settings</h4>
+                            <p>Start with these baseline settings: ISO 1600-3200, aperture f/2.8-f/4, and shutter speeds
+                                between 1-30 seconds depending on your subject. Use manual focus and focus peaking if
+                                available, as autofocus can struggle in low light.</p>
+
+                            <h4>Composition Tips</h4>
+                            <p>Look for leading lines created by streets, reflections in puddles or windows, and the
+                                contrast between warm and cool light sources. The blue hour (just after sunset) provides
+                                the perfect balance between ambient sky light and artificial illumination.</p>
+
+                            <h4>Post-Processing</h4>
+                            <p>Shoot in RAW format to maximize your editing flexibility. Focus on balancing highlights
+                                and shadows, enhancing the mood through careful color grading, and don't be afraid to
+                                embrace the grain - it often adds character to night scenes.</p>
+
+                            <p>Remember, night photography is as much about patience as it is about technique. Take time
+                                to observe how the city transforms after dark, and you'll discover endless creative
+                                possibilities.</p>
+                        </div>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop"
+                            alt="Blog post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">November 28, 2023</span>
+                            <span class="blog-category">Behind the Scenes</span>
+                        </div>
+                        <h3>The Story Behind "Metropolitan Reflections"</h3>
+                        <p class="blog-excerpt">A deep dive into the creative process and challenges of my award-winning
+                            architectural series...</p>
+                        <div class="blog-full-content" style="display: none;">
+                            <p>When I first conceived the "Metropolitan Reflections" series, I was fascinated by how
+                                urban architecture creates these incredible mirror worlds - both literal and
+                                metaphorical reflections of our society.</p>
+
+                            <h4>The Inspiration</h4>
+                            <p>Walking through downtown Chicago on a rainy evening, I noticed how the wet pavement
+                                transformed the entire streetscape into a double image. The reflection wasn't just a
+                                copy - it was a reimagining, with its own character and mood. This moment sparked what
+                                would become a two-year project.</p>
+
+                            <h4>Technical Challenges</h4>
+                            <p>Capturing perfect reflections required precise timing and often uncomfortable shooting
+                                positions. I spent countless hours lying on wet pavement, adjusting angles to eliminate
+                                unwanted elements while preserving the symmetry that made each image compelling.</p>
+
+                            <h4>The Breakthrough Moment</h4>
+                            <p>The series really came together when I realized that the most powerful images weren't
+                                about perfect mirror symmetry, but about the subtle differences between reality and
+                                reflection. The way light bent differently, how movement was captured in the reflected
+                                space - these imperfections told the deeper story.</p>
+
+                            <h4>Recognition and Impact</h4>
+                            <p>Winning the International Photography Awards Gold Medal validated years of patient work
+                                and experimentation. But more importantly, the series opened conversations about how we
+                                perceive urban spaces and our place within them.</p>
+
+                            <p>The project taught me that the most compelling art often emerges from the intersection of
+                                technical precision and creative vulnerability - being willing to see familiar spaces
+                                with fresh eyes.</p>
+                        </div>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+                <article class="blog-post">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=400&h=250&fit=crop"
+                            alt="Blog post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">November 10, 2023</span>
+                            <span class="blog-category">Equipment</span>
+                        </div>
+                        <h3>Best Lenses for Urban Architecture Photography</h3>
+                        <p class="blog-excerpt">My comprehensive guide to choosing the right equipment for capturing
+                            city architecture...</p>
+                        <div class="blog-full-content" style="display: none;">
+                            <p>After a decade of photographing urban landscapes, I've learned that lens choice can make
+                                or break an architectural shot. Here's my breakdown of the essential lenses every urban
+                                photographer should consider.</p>
+
+                            <h4>Ultra-Wide Angle (14-24mm)</h4>
+                            <p><strong>Best for:</strong> Grand architectural statements, interior spaces, dramatic
+                                perspectives</p>
+                            <p>My go-to lens for capturing entire building facades or creating dynamic compositions that
+                                emphasize scale. The key is learning to manage distortion creatively rather than
+                                fighting it. I personally use the Nikon 14-24mm f/2.8 for its exceptional sharpness and
+                                minimal vignetting.</p>
+
+                            <h4>Wide Angle (24-35mm)</h4>
+                            <p><strong>Best for:</strong> Street-level architecture, environmental context, group
+                                compositions</p>
+                            <p>This range offers the perfect balance between including enough context while maintaining
+                                natural proportions. It's my workhorse focal length for urban work. The 24-70mm f/2.8
+                                zoom gives incredible flexibility for quick composition adjustments.</p>
+
+                            <h4>Standard (50mm)</h4>
+                            <p><strong>Best for:</strong> Architectural details, human-scale perspectives, documentary
+                                style</p>
+                            <p>Often overlooked for architecture, the 50mm lens provides the most natural perspective.
+                                It's excellent for isolating specific architectural elements or showing buildings as
+                                they appear to the human eye.</p>
+
+                            <h4>Telephoto (85-200mm)</h4>
+                            <p><strong>Best for:</strong> Compressed perspectives, isolating details, minimizing
+                                distortion</p>
+                            <p>Telephoto lenses allow you to photograph tall buildings without severe keystoning and
+                                create compelling compositions by compressing foreground and background elements.
+                                They're essential for my detail work.</p>
+
+                            <h4>My Essential Kit</h4>
+                            <ul>
+                                <li>Primary: 24-70mm f/2.8 (80% of my shots)</li>
+                                <li>Drama: 14-24mm f/2.8 (20% of my shots)</li>
+                                <li>Details: 85mm f/1.8 (special situations)</li>
+                            </ul>
+
+                            <p>Remember, the best lens is the one that helps you realize your creative vision. Start
+                                with one quality zoom lens and add specialty lenses as your style develops.</p>
+                        </div>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p>Available for commercial projects, exhibitions, and commissioned work.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p>hello@bethharrison.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Location</h3>
+                        <p>New York City, NY</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Beth Harrison. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="LinkedIn">LI</a>
+                <a href="#" aria-label="Behance">BE</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn">&times;</span>
+            <img src="" alt="">
+            <div class="lightbox-info">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
