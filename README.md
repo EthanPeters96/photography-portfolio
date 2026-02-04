@@ -1,53 +1,250 @@
 # Beth Harrison - City Photography Portfolio
 
-A modern, minimalistic photography portfolio website showcasing urban and city photography work. Built with clean HTML, CSS, and JavaScript for optimal performance and user experience.
+A modern, fully-featured photography portfolio website showcasing urban and city photography work. Built with performance, accessibility, and user experience in mind.
 
-## Features
+![Portfolio Preview](https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800&h=400&fit=crop)
 
-### 🎨 Modern Design
+## 🚀 Features
 
--   Clean, minimalistic interface
--   Responsive design for all devices
--   Professional typography using Inter font
--   Smooth animations and transitions
--   Contemporary color scheme
--   Loading animations for enhanced UX
+### 🎨 Modern Design & UX
+
+- **Dark Mode Toggle**: Automatic theme switching with user preference persistence
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Smooth Animations**: CSS transitions and scroll-triggered animations
+- **Professional Typography**: Inter font family for modern aesthetics
+- **Loading States**: Skeleton screens and progressive loading
 
 ### 📸 Enhanced Gallery
 
--   Interactive image gallery with 12 curated city photos
--   Advanced filtering system (All, Architecture, Street, Skyline, Night, Urban Portraits)
--   Lightbox modal for viewing full-size images
--   Smooth hover effects and transitions
--   Touch-friendly mobile navigation
--   Optimized image loading and display
+- **Interactive Gallery**: 14 curated city photography images
+- **Advanced Filtering**: Filter by Architecture, Street, Skyline, Night, and Urban Portraits
+- **Lightbox Modal**: Full-screen image viewing with keyboard navigation
+- **Lazy Loading**: Optimized image loading for better performance
+- **Touch-Friendly**: Mobile-optimized interactions
 
-### 💼 Professional Services
+### 💼 Professional Features
 
--   **Services & Pricing Section**: Commercial photography packages
--   **Testimonials**: Client reviews and recommendations
--   **Awards & Recognition**: Professional achievements and accolades
--   **Portfolio Categories**: Specialized collections (Night Photography, Urban Portraits)
+- **Services & Pricing**: Detailed commercial photography packages
+- **Client Testimonials**: Social proof with client reviews
+- **Awards & Recognition**: Professional achievements showcase
+- **Blog Section**: Expandable photography tips and insights
+- **Contact Form**: Functional contact form with EmailJS integration
 
-### 📝 Interactive Blog
+### 🔧 Technical Excellence
 
--   **Expandable Blog Posts**: Click "Read More" for full content
--   **Professional Content**: Photography tips, behind-the-scenes stories, equipment guides
--   **Smooth Animations**: Fade-in/out transitions for content expansion
--   **Educational Value**: Detailed photography techniques and insights
+- **Progressive Web App (PWA)**: Installable web app with offline capabilities
+- **SEO Optimized**: Comprehensive meta tags, structured data, and Open Graph
+- **Accessibility (A11y)**: WCAG compliant with screen reader support
+- **Performance**: Lazy loading, optimized images, and efficient caching
+- **Analytics**: Google Analytics 4 integration for insights
 
-### 🚀 Performance
+### 📱 Mobile & Cross-Platform
 
--   Lightweight and fast loading
--   Optimized images from Unsplash
--   Smooth scrolling navigation
--   Intersection Observer for scroll animations
--   Preloaded images for better UX
--   Enhanced scroll-based animations
+- **Mobile-First**: Responsive design with touch optimizations
+- **PWA Ready**: Service worker for offline functionality
+- **Cross-Browser**: Compatible with modern browsers
+- **Keyboard Navigation**: Full keyboard accessibility
 
-### 📱 Mobile Responsive
+## 🛠️ Setup & Installation
 
--   Mobile-first design approach
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+- Modern web browser
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/beth-harrison-portfolio.git
+   cd beth-harrison-portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure EmailJS (for contact form)**
+   - Sign up at [EmailJS](https://www.emailjs.com/)
+   - Create a service and email template
+   - Update `script.js` with your EmailJS credentials:
+     ```javascript
+     emailjs.init("YOUR_PUBLIC_KEY");
+     // In the send function:
+     emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams);
+     ```
+
+4. **Configure Analytics**
+   - Replace `GA_MEASUREMENT_ID` in `index.html` with your Google Analytics ID
+   - Or remove the analytics code if not needed
+
+5. **Start development server**
+   ```bash
+   npm start
+   # or
+   python3 -m http.server 8000
+   ```
+
+6. **Open in browser**
+   ```
+   http://localhost:8000
+   ```
+
+## 📋 Configuration
+
+### EmailJS Setup
+
+1. Create account at [EmailJS](https://www.emailjs.com/)
+2. Add email service (Gmail, Outlook, etc.)
+3. Create email template with variables:
+   - `{{from_name}}`
+   - `{{from_email}}`
+   - `{{message}}`
+   - `{{to_name}}`
+4. Update credentials in `script.js`
+
+### Analytics Setup
+
+Replace `GA_MEASUREMENT_ID` in `index.html` with your Google Analytics measurement ID.
+
+### Customization
+
+- **Colors**: Update CSS custom properties in `:root`
+- **Content**: Edit HTML content directly
+- **Images**: Replace Unsplash URLs with your own images
+- **Fonts**: Modify Google Fonts link in HTML head
+
+## 🎯 Performance Optimizations
+
+- **Image Optimization**: WebP format with fallbacks
+- **Lazy Loading**: Intersection Observer API
+- **Caching**: Service Worker for offline functionality
+- **Minification**: Optimized CSS and JavaScript
+- **Critical CSS**: Above-the-fold content prioritized
+
+## ♿ Accessibility Features
+
+- **WCAG 2.1 AA Compliant**: Screen reader friendly
+- **Keyboard Navigation**: Full keyboard support
+- **Focus Management**: Visible focus indicators
+- **Semantic HTML**: Proper heading hierarchy
+- **Alt Text**: Descriptive image alternatives
+- **Skip Links**: Quick navigation for screen readers
+
+## 📊 Analytics & Tracking
+
+The site includes Google Analytics 4 with custom events:
+- Gallery interactions
+- Contact form submissions
+- Theme changes
+- Blog searches
+- PWA installations
+
+## 🔒 Security
+
+- **Content Security Policy**: Implemented in service worker
+- **HTTPS Ready**: Designed for secure hosting
+- **Input Sanitization**: Client-side form validation
+- **Secure Dependencies**: Regularly updated packages
+
+## 🚀 Deployment
+
+### Netlify (Recommended)
+
+1. Connect GitHub repository
+2. Set build command: `npm run build`
+3. Deploy automatically on push
+
+### Vercel
+
+1. Import project from GitHub
+2. Configure build settings
+3. Deploy with zero configuration
+
+### Traditional Hosting
+
+1. Upload files to web server
+2. Ensure HTTPS certificate
+3. Configure server for PWA headers
+
+## 🧪 Testing
+
+```bash
+# Run linting
+npm run lint
+
+# Performance testing (Lighthouse)
+# Use browser dev tools or online testers
+
+# Accessibility testing
+# Use WAVE, axe, or Lighthouse accessibility audit
+```
+
+## 📝 Blog Content Management
+
+The blog posts are currently hardcoded. For dynamic content:
+
+1. **Static Site Generator**: Use Eleventy or Hugo
+2. **Headless CMS**: Integrate with Contentful or Strapi
+3. **Database**: Add backend with Node.js/Express
+
+## 🎨 Customization Guide
+
+### Color Scheme
+
+```css
+:root {
+  --primary-color: #333333;
+  --secondary-color: #666666;
+  --accent-color: #007bff;
+  --text-color: #333333;
+  --bg-color: #ffffff;
+}
+```
+
+### Typography
+
+- Primary: Inter (Google Fonts)
+- Headings: 600 weight
+- Body: 400 weight
+- Scale: 1.2 (minor third)
+
+### Breakpoints
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Images**: [Unsplash](https://unsplash.com) photographers
+- **Icons**: Unicode emojis and custom SVGs
+- **Fonts**: [Google Fonts - Inter](https://fonts.google.com/specimen/Inter)
+- **Libraries**: EmailJS for contact forms
+
+## 📞 Support
+
+For support or questions:
+- Email: hello@bethharrison.com
+- Portfolio: [bethharrison.com](https://bethharrison.com)
+
+---
+
+**Built with ❤️ for photographers by developers**
 -   Touch-friendly navigation
 -   Optimized layouts for tablets and phones
 -   Collapsible mobile menu

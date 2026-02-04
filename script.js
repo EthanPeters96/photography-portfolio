@@ -195,47 +195,67 @@ document.addEventListener(
   }
 );
 
-// Contact Form Handling
+// Contact Form Handling with EmailJS
 contactForm.addEventListener(
   "submit",
-  (
+  async (
     e
   ) => {
     e.preventDefault();
 
-    const formData =
-      new FormData(
-        contactForm
-      );
-    const name =
-      contactForm.querySelector(
-        'input[type="text"]'
-      ).value;
-    const email =
-      contactForm.querySelector(
-        'input[type="email"]'
-      ).value;
-    const message =
-      contactForm.querySelector(
-        "textarea"
-      ).value;
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
 
-    if (
-      name &&
-      email &&
-      message
-    ) {
-      // Show success message
-      showNotification(
-        "Thank you for your message! I'll get back to you soon.",
-        "success"
+    const formData = new FormData(contactForm);
+    const name = contactForm.querySelector('#name').value;
+    const email = contactForm.querySelector('#email').value;
+    const message = contactForm.querySelector('#message').value;
+
+    if (!name || !email || !message) {
+      showNotification("Please fill in all fields.", "error");
+      return;
+    }
+
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+
+    try {
+      // Initialize EmailJS (You'll need to replace these with your actual EmailJS credentials)
+      emailjs.init("YOUR_PUBLIC_KEY");
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_name: "Beth Harrison"
+      };
+
+      await emailjs.send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        templateParams
       );
+
+      showNotification("Thank you for your message! I'll get back to you soon.", "success");
       contactForm.reset();
-    } else {
-      showNotification(
-        "Please fill in all fields.",
-        "error"
-      );
+
+      // Track form submission
+      gtag('event', 'contact_form_submit', {
+        event_category: 'engagement',
+        event_label: 'contact'
+      });
+
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      showNotification("Sorry, there was an error sending your message. Please try again or contact me directly.", "error");
+    } finally {
+      // Reset loading state
+      submitBtn.disabled = false;
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
     }
   }
 );
@@ -1298,6 +1318,210 @@ document.addEventListener(
     );
   }
 );
+
+// Dark Mode Toggle
+function initDarkMode() {
+  const darkModeToggle = document.createElement('button');
+  darkModeToggle.className = 'dark-mode-toggle';
+  darkModeToggle.innerHTML = '🌙';
+  darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
+  darkModeToggle.title = 'Toggle dark mode';
+
+  // Add to navbar
+  const navContainer = document.querySelector('.nav-container');
+  navContainer.appendChild(darkModeToggle);
+
+  // Check for saved theme preference or default to light mode
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  if (currentTheme === 'dark') {
+    darkModeToggle.innerHTML = '☀️';
+    darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    darkModeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+    darkModeToggle.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+
+    // Track theme change
+    gtag('event', 'theme_change', {
+      event_category: 'engagement',
+      event_label: newTheme
+    });
+  });
+}
+
+// Enhanced Accessibility Features
+function initAccessibility() {
+  // Add skip link
+  const skipLink = document.createElement('a');
+  skipLink.href = '#main-content';
+  skipLink.className = 'skip-link sr-only';
+  skipLink.textContent = 'Skip to main content';
+  document.body.insertBefore(skipLink, document.body.firstChild);
+
+  // Add focus management for lightbox
+  const originalFocus = document.activeElement;
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          lastElement.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          firstElement.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+
+  // Restore focus when lightbox closes
+  closeBtn.addEventListener('click', () => {
+    originalFocus.focus();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.style.display === 'block') {
+      closeLightbox();
+      originalFocus.focus();
+    }
+  });
+}
+
+// PWA Installation
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Show install button
+  const installBtn = document.createElement('button');
+  installBtn.className = 'install-btn';
+  installBtn.innerHTML = '📱 Install App';
+  installBtn.setAttribute('aria-label', 'Install Beth Harrison Photography app');
+
+  const navContainer = document.querySelector('.nav-container');
+  navContainer.appendChild(installBtn);
+
+  installBtn.addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        gtag('event', 'pwa_install', {
+          event_category: 'engagement',
+          event_label: 'accepted'
+        });
+      }
+      deferredPrompt = null;
+      installBtn.remove();
+    });
+  });
+});
+
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('SW registered: ', registration);
+      })
+      .catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
+}
+
+// Enhanced Gallery with Keyboard Navigation
+function initEnhancedGallery() {
+  galleryItems.forEach((item, index) => {
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('role', 'button');
+    item.setAttribute('aria-label', `View ${item.querySelector('h3').textContent} - ${item.querySelector('p').textContent}`);
+
+    // Keyboard navigation
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        item.click();
+      }
+    });
+
+    // Track gallery interactions
+    item.addEventListener('click', () => {
+      gtag('event', 'gallery_item_click', {
+        event_category: 'engagement',
+        event_label: item.dataset.category
+      });
+    });
+  });
+}
+
+// Search Functionality for Blog
+function initBlogSearch() {
+  const searchContainer = document.createElement('div');
+  searchContainer.className = 'blog-search';
+  searchContainer.innerHTML = `
+    <input type="text" id="blogSearch" placeholder="Search blog posts..." aria-label="Search blog posts">
+    <button type="button" id="searchBtn" aria-label="Search">🔍</button>
+  `;
+
+  const blogSection = document.querySelector('.blog .container');
+  blogSection.insertBefore(searchContainer, blogSection.querySelector('.blog-grid'));
+
+  const searchInput = document.getElementById('blogSearch');
+  const searchBtn = document.getElementById('searchBtn');
+
+  function performSearch() {
+    const query = searchInput.value.toLowerCase();
+    const posts = document.querySelectorAll('.blog-post');
+
+    posts.forEach(post => {
+      const title = post.querySelector('h3').textContent.toLowerCase();
+      const excerpt = post.querySelector('.blog-excerpt').textContent.toLowerCase();
+      const content = post.querySelector('.blog-full-content').textContent.toLowerCase();
+
+      if (title.includes(query) || excerpt.includes(query) || content.includes(query)) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+
+    // Track search
+    if (query.length > 0) {
+      gtag('event', 'blog_search', {
+        event_category: 'engagement',
+        event_label: query
+      });
+    }
+  }
+
+  searchInput.addEventListener('input', performSearch);
+  searchBtn.addEventListener('click', performSearch);
+}
+
+// Initialize all enhancements
+document.addEventListener('DOMContentLoaded', () => {
+  initDarkMode();
+  initAccessibility();
+  initEnhancedGallery();
+  initBlogSearch();
+});
 
 console.log(
   "Beth Harrison Photography Portfolio - Enhanced version loaded successfully! 📸"

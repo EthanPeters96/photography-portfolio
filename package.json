@@ -1,5 +1,38 @@
 {
+  "name": "beth-harrison-photography-portfolio",
+  "version": "2.0.0",
+  "description": "Modern photography portfolio website for Beth Harrison - City Photography",
+  "main": "script.js",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "build": "echo 'Build process would go here'",
+    "lint": "eslint script.js",
+    "test": "echo 'Tests would go here'"
+  },
   "dependencies": {
     "eslint": "^9.32.0"
-  }
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": [
+    "photography",
+    "portfolio",
+    "urban",
+    "city",
+    "architecture",
+    "pwa",
+    "responsive"
+  ],
+  "author": "Beth Harrison",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/beth-harrison-portfolio"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
 }

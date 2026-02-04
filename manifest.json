@@ -1,0 +1,28 @@
+{
+    "name": "Beth Harrison - City Photography",
+    "short_name": "Beth Harrison",
+    "description": "Award-winning urban and city photography portfolio",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#333333",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=192&h=192&fit=crop",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=512&h=512&fit=crop",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["photography", "portfolio", "business"],
+    "lang": "en-US",
+    "dir": "ltr"
+}

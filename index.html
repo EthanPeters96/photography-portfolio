@@ -4,9 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beth Harrison - City Photography</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Beth Harrison - City Photography Portfolio | Professional Urban Photographer</title>
+    <meta name="description" content="Award-winning urban and city photography by Beth Harrison. Specializing in architectural, street, and night photography across North America and Europe.">
+    <meta name="keywords" content="urban photography, city photography, architectural photography, street photography, night photography, Beth Harrison, New York photographer">
+    <meta name="author" content="Beth Harrison">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bethharrison.com/">
+    <meta property="og:title" content="Beth Harrison - City Photography Portfolio">
+    <meta property="og:description" content="Award-winning urban and city photography by Beth Harrison. Specializing in architectural, street, and night photography.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1200&h=630&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bethharrison.com/">
+    <meta property="twitter:title" content="Beth Harrison - City Photography Portfolio">
+    <meta property="twitter:description" content="Award-winning urban and city photography by Beth Harrison. Specializing in architectural, street, and night photography.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1200&h=630&fit=crop">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Beth Harrison",
+        "jobTitle": "Professional Photographer",
+        "description": "Award-winning urban and city photographer specializing in architectural, street, and night photography",
+        "url": "https://bethharrison.com",
+        "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop",
+        "sameAs": [
+            "https://instagram.com/bethharrison",
+            "https://linkedin.com/in/bethharrison",
+            "https://behance.net/bethharrison"
+        ],
+        "knowsAbout": ["Urban Photography", "Architectural Photography", "Street Photography", "Night Photography"],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Professional Photographer",
+            "occupationLocation": {
+                "@type": "City",
+                "name": "New York City",
+                "addressCountry": "US"
+            }
+        },
+        "award": ["International Photography Awards Gold Medal", "Sony World Photography Awards Finalist", "National Geographic Featured Photographer"]
+    }
+    </script>
 </head>
 
 <body>
@@ -38,11 +97,12 @@
         <div class="hero-content">
             <h1>Urban Stories Through Light</h1>
             <p>Capturing the soul of cities through contemporary photography</p>
-            <a href="#gallery" class="cta-button">View Gallery</a>
+            <a href="#gallery" class="cta-button" aria-label="View photography gallery">View Gallery</a>
         </div>
         <div class="hero-image">
             <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800&h=600&fit=crop"
-                alt="Urban architecture and city streets">
+                alt="Urban architecture and city streets showcasing contemporary photography style"
+                loading="eager">
         </div>
     </section>
 
@@ -61,7 +121,8 @@
             <div class="gallery-grid">
                 <div class="gallery-item" data-category="architecture">
                     <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=600&h=400&fit=crop"
-                        alt="Modern architecture">
+                        alt="Modern architectural lines and geometric patterns in city building"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Modern Lines</h3>
                         <p>Architecture Series</p>
@@ -69,7 +130,8 @@
                 </div>
                 <div class="gallery-item" data-category="street">
                     <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=800&fit=crop"
-                        alt="City street at night">
+                        alt="Vibrant city street at night with neon lights and urban atmosphere"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Neon Dreams</h3>
                         <p>Street Photography</p>
@@ -77,7 +139,8 @@
                 </div>
                 <div class="gallery-item" data-category="skyline">
                     <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=600&h=400&fit=crop"
-                        alt="City skyline">
+                        alt="Dramatic city skyline silhouette against colorful sky"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Skyline Silhouettes</h3>
                         <p>Urban Landscapes</p>
@@ -85,7 +148,8 @@
                 </div>
                 <div class="gallery-item" data-category="architecture">
                     <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=600&fit=crop"
-                        alt="Building facade">
+                        alt="Detailed architectural facade with intricate building design"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Geometric Patterns</h3>
                         <p>Architectural Details</p>
@@ -93,7 +157,8 @@
                 </div>
                 <div class="gallery-item" data-category="street">
                     <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&h=400&fit=crop"
-                        alt="Busy city intersection">
+                        alt="Busy urban intersection with people and city movement"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Urban Flow</h3>
                         <p>City Life</p>
@@ -101,7 +166,8 @@
                 </div>
                 <div class="gallery-item" data-category="skyline">
                     <img src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?w=600&h=800&fit=crop"
-                        alt="City reflection">
+                        alt="City skyline reflected in water creating symmetrical composition"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Reflections</h3>
                         <p>Urban Abstracts</p>
@@ -109,7 +175,8 @@
                 </div>
                 <div class="gallery-item" data-category="night">
                     <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&h=800&fit=crop"
-                        alt="Night city lights">
+                        alt="City lights and buildings illuminated at night"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Neon Nights</h3>
                         <p>Night Photography</p>
@@ -117,7 +184,8 @@
                 </div>
                 <div class="gallery-item" data-category="portraits">
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=400&fit=crop"
-                        alt="Urban portrait">
+                        alt="Portrait of person in urban environment"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>City Souls</h3>
                         <p>Urban Portraits</p>
@@ -125,7 +193,8 @@
                 </div>
                 <div class="gallery-item" data-category="architecture">
                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=600&fit=crop"
-                        alt="Modern building">
+                        alt="Modern glass and steel architectural structure"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Glass & Steel</h3>
                         <p>Contemporary Architecture</p>
@@ -133,7 +202,8 @@
                 </div>
                 <div class="gallery-item" data-category="night">
                     <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=600&h=400&fit=crop"
-                        alt="Night street">
+                        alt="Night street scene with atmospheric lighting"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>After Dark</h3>
                         <p>Night Streets</p>
@@ -141,7 +211,8 @@
                 </div>
                 <div class="gallery-item" data-category="street">
                     <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=800&fit=crop"
-                        alt="Busy street">
+                        alt="Dynamic street photography capturing urban movement"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Urban Rhythm</h3>
                         <p>Street Life</p>
@@ -149,7 +220,8 @@
                 </div>
                 <div class="gallery-item" data-category="portraits">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop"
-                        alt="City portrait">
+                        alt="Urban portrait capturing metropolitan lifestyle"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Metropolitan</h3>
                         <p>Urban Life</p>
@@ -157,7 +229,8 @@
                 </div>
                 <div class="gallery-item" data-category="architecture">
                     <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=600&h=400&fit=crop"
-                        alt="Building details">
+                        alt="Detailed architectural study of building elements"
+                        loading="lazy">
                     <div class="gallery-overlay">
                         <h3>Urban Forms</h3>
                         <p>Architectural Study</p>
@@ -196,7 +269,8 @@
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop"
-                        alt="Beth Harrison portrait">
+                        alt="Professional portrait of Beth Harrison, urban photographer"
+                        loading="lazy">
                 </div>
             </div>
         </div>
@@ -260,7 +334,8 @@
                     </div>
                     <div class="testimonial-author">
                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
-                            alt="Client">
+                            alt="Portrait of Michael Chen, Senior Architect"
+                            loading="lazy">
                         <div class="author-info">
                             <h4>Michael Chen</h4>
                             <p>Senior Architect, Urban Design Co.</p>
@@ -274,7 +349,8 @@
                     </div>
                     <div class="testimonial-author">
                         <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face"
-                            alt="Client">
+                            alt="Portrait of Sarah Martinez, Marketing Director"
+                            loading="lazy">
                         <div class="author-info">
                             <h4>Sarah Martinez</h4>
                             <p>Marketing Director, Metro Properties</p>
@@ -288,7 +364,8 @@
                     </div>
                     <div class="testimonial-author">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
-                            alt="Client">
+                            alt="Portrait of David Wilson, Gallery Curator"
+                            loading="lazy">
                         <div class="author-info">
                             <h4>David Wilson</h4>
                             <p>Gallery Curator, Modern Art Space</p>
@@ -349,7 +426,8 @@
                 <article class="blog-post">
                     <div class="blog-image">
                         <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&h=250&fit=crop"
-                            alt="Blog post">
+                            alt="Photography equipment and camera setup for night photography"
+                            loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
@@ -395,7 +473,8 @@
                 <article class="blog-post">
                     <div class="blog-image">
                         <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop"
-                            alt="Blog post">
+                            alt="Urban street photography composition and technique"
+                            loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
@@ -442,7 +521,8 @@
                 <article class="blog-post">
                     <div class="blog-image">
                         <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?w=400&h=250&fit=crop"
-                            alt="Blog post">
+                            alt="Architectural photography lens selection and technique"
+                            loading="lazy">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
@@ -523,17 +603,23 @@
                         <p>New York City, NY</p>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -564,6 +650,18 @@
     </div>
 
     <script src="script.js"></script>
+
+    <!-- EmailJS for contact form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </body>
 
 </html>

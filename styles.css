@@ -1337,3 +1337,230 @@ body {
     padding: 1.5rem;
   }
 }
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --nav-bg: rgba(26, 26, 26, 0.95);
+  --card-bg: #2a2a2a;
+  --border-color: #404040;
+  --hover-color: #555555;
+}
+
+[data-theme="dark"] body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .navbar {
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .nav-links a {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+[data-theme="dark"] .gallery-item,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .blog-post {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .gallery-overlay,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .blog-post {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form textarea {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .contact-form input::placeholder,
+[data-theme="dark"] .contact-form textarea::placeholder {
+  color: #cccccc;
+}
+
+[data-theme="dark"] .footer {
+  background: #1a1a1a;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  margin-left: 1rem;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* PWA Install Button */
+.install-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.install-btn:hover {
+  background: #218838;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #333;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Blog Search */
+.blog-search {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.blog-search input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.blog-search button {
+  padding: 0.75rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.blog-search button:hover {
+  background: #555;
+}
+
+/* Enhanced Focus Styles */
+.gallery-item:focus,
+.filter-btn:focus,
+.contact-form input:focus,
+.contact-form textarea:focus,
+.blog-search input:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.btn-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-loading::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Improved Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dark-mode-toggle,
+  .install-btn {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    margin-left: 0.5rem;
+  }
+
+  .blog-search {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .blog-search input {
+    width: 100%;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .dark-mode-toggle,
+  .install-btn,
+  .blog-search {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .gallery-item,
+  .service-card,
+  .testimonial-card,
+  .blog-post {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+  }
+}
